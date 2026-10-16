@@ -1,0 +1,13 @@
+# ตั้งค่า Fabric workspace ID ของ environment หลัก (dev/prod) ที่นี่ที่เดียว — แต่ละคนแก้ไฟล์นี้
+# เองใน Lab 1 ส่วน A (A.4) ด้วย GUID ของ workspace ตัวเอง ไม่ต้องไล่แก้
+# .github/workflows/fabric-ci.yml / scripts/deploy_local.py เอง
+#
+# หา GUID: เปิด workspace ใน Fabric portal ดูจาก URL (https://app.fabric.microsoft.com/groups/<GUID>/...)
+#
+# ไม่ใช่ secret (แค่ workspace identifier) — commit เข้า repo ได้ปกติเหมือน endpoint-targets.yml
+#
+# หมายเหตุ: นี่คือ workspace ของ fabric_items/ (item หลัก) เท่านั้น — endpoint item
+# (lh_endpoint_lab ฯลฯ) มี config แยกของตัวเองอยู่แล้วที่ endpoint-targets.yml
+
+dev: "<WORKSPACE_ID_DEV>"      # GUID #1 — ws-dataops-dev-<ชื่อ> (ใช้ตอนรัน deploy_local.py / dry-run มือ)
+prod: "<WORKSPACE_ID_PROD>"    # GUID #2 — ws-dataops-prod-<ชื่อ> (job deploy-prod ใน CI อ่านค่านี้)
